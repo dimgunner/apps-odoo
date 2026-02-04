@@ -46,7 +46,7 @@ class StockLocation(models.Model):
                                        "terms of Units")
 
     _sql_constraints = [
-        ('unique_code', 'UNIQUE(unique_code)',
+        ('check_unique_code', 'UNIQUE(unique_code)',
          "The location code must be unique per company !"),
     ]
 

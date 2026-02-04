@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 {
     'name': "Stock 3D View",
-    'version': '1.0',
+    'version': '17.0.1.0.0',
     'category': 'Warehouse',
     'summary': """Virtual 3D Visualization of warehouses and Locations""",
     'description': """This module innovative addition to the inventory and 

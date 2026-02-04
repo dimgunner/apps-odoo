@@ -1,3 +1,5 @@
+/** @odoo-module **/
+
 import { Component, onWillStart, onMounted, onPatched, useState } from "@odoo/owl";
 import { registry } from "@web/core/registry";
 import { createElement, append } from "@web/core/utils/xml";
@@ -6,8 +8,6 @@ import { formView } from "@web/views/form/form_view";
 import { FormController } from '@web/views/form/form_controller';
 import { useService } from "@web/core/utils/hooks";
 import {_t} from "@web/core/l10n/translation";
-import { ensureJQuery } from '@web/core/ensure_jquery';
-import { rpc } from "@web/core/network/rpc";
 import {CustomDialog} from "./listview_3d"
 
 export class Stock3DFormView extends Component {
@@ -15,9 +15,7 @@ export class Stock3DFormView extends Component {
         super.setup();
         this.orm = useService("orm");
 		this.dialog = useService('dialog');
-        onWillStart(async () => {
-            await ensureJQuery()
-        })
+	    this.rpc = useService("rpc");
 
 		onMounted(() => {
             this.Open3DView()
@@ -90,7 +88,7 @@ export class Stock3DFormView extends Component {
 			 * @param {integer} company_id
 			 * @param {integer} loc_id
 			 */
-			await rpc('/3Dstock/data/standalone', {
+			await self.rpc('/3Dstock/data/standalone', {
 				'company_id': self.props.action.context.company_id || localStorage.getItem("company_id"),
 				'loc_id': self.props.action.context.loc_id || localStorage.getItem("location_id"),
 			}).then(function(incoming_data) {
@@ -137,7 +135,7 @@ export class Stock3DFormView extends Component {
 					 * @await
 					 * @param {integer} loc_code
 					 */
-					await rpc('/3Dstock/data/quantity', {
+					await self.rpc('/3Dstock/data/quantity', {
 						'loc_code': key,
 					}).then(function(quant_data) {
 						loc_quant = quant_data;
@@ -290,7 +288,7 @@ export class Stock3DFormView extends Component {
 								 * @await
 								 * @param {integer} loc_code
 								 */
-								await rpc('/3Dstock/data/product', {
+								await self.rpc('/3Dstock/data/product', {
 									'loc_code': res.object.name,
 								}).then(function(product_data) {
 									products = product_data;

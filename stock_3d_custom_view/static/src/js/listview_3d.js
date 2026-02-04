@@ -6,11 +6,8 @@ import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { loadJS, loadCSS } from "@web/core/assets";
 import { cookie } from "@web/core/browser/cookie";
-import { ensureJQuery } from '@web/core/ensure_jquery';
 import { listView } from "@web/views/list/list_view";
 import { ListController } from "@web/views/list/list_controller";
-import { rpc } from "@web/core/network/rpc";
-import { user } from "@web/core/user";
 import { Dialog } from "@web/core/dialog/dialog";
 
 export class CustomDialog extends Component {
@@ -25,11 +22,12 @@ export class CustomDialog extends Component {
 export class Stock3DController extends ListController {
 	super() {
 		super.setup();
+
+	    this.rpc = useService("rpc");
+        this.userService = useService("user");
 	}
 
 	async open3DView(ev) {
-		var self = this;
-		await ensureJQuery();
 		var self = this;
 		var wh_data;
 		var data;
@@ -49,8 +47,8 @@ export class Stock3DController extends ListController {
 		 * @await
 		 * @param {integer} company_id
 		 */
-		await rpc('/3Dstock/warehouse', {
-			'company_id': user.context.allowed_company_ids[0],
+		await self.rpc('/3Dstock/warehouse', {
+			'company_id': self.userService.context.allowed_company_ids[0],
 		}).then(function(incoming_data) {
 			wh_data = incoming_data;
 		});
@@ -113,8 +111,8 @@ export class Stock3DController extends ListController {
 			 * @param {integer} company_id
 			 * @param {integer} wh_id
 			 */
-			await rpc('/3Dstock/data', {
-				'company_id': user.context.allowed_company_ids[0],
+			await self.rpc('/3Dstock/data', {
+				'company_id': self.userService.context.allowed_company_ids[0],
 				'wh_id': wh_id,
 			}).then(function(incoming_data) {
 				data = incoming_data;
@@ -167,7 +165,7 @@ export class Stock3DController extends ListController {
 					 * @await
 					 * @param {integer} loc_code
 					 */
-					await rpc('/3Dstock/data/quantity', {
+					await self.rpc('/3Dstock/data/quantity', {
 						'loc_code': key,
 					}).then(function(quant_data) {
 						loc_quant = quant_data;
@@ -344,7 +342,7 @@ export class Stock3DController extends ListController {
 							 * @await
 							 * @param {integer} loc_code
 							 */
-							await rpc('/3Dstock/data/product', {
+							await self.rpc('/3Dstock/data/product', {
 								'loc_code': res.object.name,
 							}).then(function(product_data) {
 								products = product_data;
