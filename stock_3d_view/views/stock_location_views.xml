@@ -10,32 +10,32 @@
             <xpath expr="//sheet" position="before">
                 <header>
                     <button type="object" name="action_view_location_3d_button"
-                            string="3D" id="view_location_3d_button"
-                            class="btn btn-primary fa fa-lg fa-cubes"
-                            attrs="{'invisible':['|',('location_id', '=', False),('length','=',0),('width','=',0)]}"/>
+                            string="3D View" id="view_location_3d_button"
+                            class="btn btn-primary"
+                            invisible="not location_id or (length == 0 and width == 0)"/>
                 </header>
             </xpath>
             <!--adding location dimension fields in stock.location form view.-->
             <xpath expr="//sheet" position="inside">
                 <notebook>
                     <page string="3D Properties"
-                          attrs="{'invisible': [('usage', '!=', 'internal')]}">
+                          invisible="usage != 'internal'">
                         <group>
                             <group string="Dimension">
                                 <field name="length"
-                                       attrs="{'required': [('usage', '=', 'internal')]}"/>
+                                       required="usage == 'internal'"/>
                                 <field name="width"
-                                       attrs="{'required': [('usage', '=', 'internal')]}"/>
+                                       required="usage == 'internal'"/>
                                 <field name="height"
-                                       attrs="{'required': [('usage', '=', 'internal')]}"/>
+                                       required="usage == 'internal'"/>
                             </group>
                             <group string="Position">
                                 <field name="pos_x"
-                                       attrs="{'required': [('usage', '=', 'internal')]}"/>
+                                       required="usage == 'internal'"/>
                                 <field name="pos_y"
-                                       attrs="{'required': [('usage', '=', 'internal')]}"/>
+                                       required="usage == 'internal'"/>
                                 <field name="pos_z"
-                                       attrs="{'required': [('usage', '=', 'internal')]}"/>
+                                       required="usage == 'internal'"/>
                             </group>
                         </group>
                     </page>
@@ -44,12 +44,13 @@
             <!--adding unique code field of the location inside the stock.location form view.-->
             <xpath expr="//field[@name='usage']" position="after">
                 <field name="unique_code"
-                       attrs="{'invisible': [('usage', '!=', 'internal')], 'required': [('usage', '=', 'internal')]}"/>
+                       invisible="usage != 'internal'"
+                       required="usage == 'internal'"/>
             </xpath>
             <!--adding maximum capacity field of the location inside the stock.location form view.-->
             <xpath expr="//field[@name='storage_category_id']" position="after">
                 <field name="max_capacity"
-                       attrs="{'invisible': [('usage', '!=', 'internal')]}"/>
+                       invisible="usage != 'internal'"/>
             </xpath>
         </field>
     </record>

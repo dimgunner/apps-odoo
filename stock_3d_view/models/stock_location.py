@@ -46,7 +46,7 @@ class StockLocation(models.Model):
                                        "terms of Units")
 
     _sql_constraints = [
-        ('unique_code', 'UNIQUE(unique_code)',
+        ('check_unique_code', 'UNIQUE(unique_code)',
          "The location code must be unique per company !"),
     ]
 
@@ -58,6 +58,7 @@ class StockLocation(models.Model):
         @return: client action with location id and company id to display.
         """
         return {
+            'name': '3D View',
             'type': 'ir.actions.client',
             'tag': 'open_form_3d_view',
             'context': {

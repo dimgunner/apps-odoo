@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <template>
-    <!--adding breadcrumbs manually in stock.location form view.-->
-    <t t-name="Location3DFormView">
+    <t t-name="stock_3d_view.Location3DFormView">
         <div class="o_action">
             <div class="o_control_panel">
                 <div class="o_cp_top">
                     <div class="o_cp_top_left">
                         <t t-slot="control-panel-top-left">
                             <ol class="breadcrumb">
-                                <t t-foreach="widget.breadcrumbs" t-as="breadcrumb">
+                                <!-- <t t-foreach="widget.breadcrumbs" t-as="breadcrumb" t-key="breadcrumb.jsId">
                                     <li class="breadcrumb-item">
                                         <a href="#" t-att-jsId="breadcrumb.jsId">
                                             <t t-esc="breadcrumb.name"/>
                                         </a>
                                     </li>
-                                </t>
+                                </t> -->
                                 <li class="breadcrumb-item active">
                                     <span class="text-muted">3D view</span>
                                 </li>
