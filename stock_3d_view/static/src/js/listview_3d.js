@@ -300,6 +300,7 @@ export class Stock3DController extends ListController {
 					closeDiv.style.display = "none";
 				}
 			} else {
+    			canvas.classList.add("view-3d");
 				window.addEventListener('dblclick', onPointerMove);
 				window.addEventListener('resize', onWindowResize);
 				if (selectedBox) {

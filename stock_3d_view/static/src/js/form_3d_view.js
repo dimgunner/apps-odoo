@@ -281,6 +281,7 @@ export class Stock3DFormView extends Component {
 				}
 			} else {
     			canvas.style.marginTop = "38px";
+    			canvas.classList.add("view-3d");
 				window.addEventListener('dblclick', onPointerMove);
 				window.addEventListener('resize', onWindowResize);
 				if (colorBox) {
