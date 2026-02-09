@@ -20,7 +20,7 @@
 ##################################################################################
 {
     'name': 'Voice Chat In Odoo',
-    'version': '16.0.1.0.0',
+    'version': '17.0.1.0.0',
     'category': 'Discuss',
     'summary': 'Voice Message in Odoo Discuss',
     'description': 'Record voice note in odoo,Voice Chat In Odoo,Voice Chat,Voice Odoo,Voice Message Odoo,Voice Message in Odoo,Audio Message In Odoo,Audio in Odoo,Voice note',
@@ -33,9 +33,6 @@
     'assets': {
         'web.assets_backend': [
             'voice_note_in_chatter/static/src/xml/voice_in_odoo.xml',
-            'voice_note_in_chatter/static/src/js/record_voice_component.js',
-            'voice_note_in_chatter/static/src/js/voice_in_odoo.js',
-            'voice_note_in_chatter/static/src/js/record_voice_model.js'
         ]
     },
     'license': 'AGPL-3',
