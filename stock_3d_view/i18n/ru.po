@@ -1,0 +1,185 @@
+# Translation of Fincomtech Server.
+# This file contains the translation of the following modules:
+# 	* stock_3d_view
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Fincomtech Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 07:46+0000\n"
+"PO-Revision-Date: 2026-02-09 17:17+0600\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"X-Generator: Poedit 3.4.2\n"
+
+#. module: stock_3d_view
+#: model_terms:ir.ui.view,arch_db:stock_3d_view.view_location_form
+msgid "3D Properties"
+msgstr "3D Свойства"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_breadcrumb_templates.xml:0
+#, python-format
+msgid "3D view"
+msgstr "3D вид"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_modal_templates.xml:0
+#, python-format
+msgid "Available Space:"
+msgstr "Свободное место:"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__max_capacity
+msgid "Capacity (Units)"
+msgstr "Вместимость ( в единицах)"
+
+#. module: stock_3d_view
+#: model_terms:ir.ui.view,arch_db:stock_3d_view.view_location_form
+msgid "Dimension"
+msgstr "Размер"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__height
+msgid "Height (M)"
+msgstr "Высота"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__height
+msgid "Height of the location in meters"
+msgstr "Высота места хранения в метрах"
+
+#. module: stock_3d_view
+#: model:ir.model,name:stock_3d_view.model_stock_location
+msgid "Inventory Locations"
+msgstr "Места хранения"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__length
+msgid "Length (M)"
+msgstr "Длина (м)"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__length
+msgid "Length of the location in meters"
+msgstr "Длина места хранения в метрах"
+
+#. module: stock_3d_view
+#: model:ir.actions.client,name:stock_3d_view.stock_location_3d_action
+msgid "Location 3D View"
+msgstr "3D-вид места хранения"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__unique_code
+msgid "Location Code"
+msgstr "Код места хранения"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__max_capacity
+msgid "Maximum capacity of the location in terms of Units"
+msgstr "Максимальная вместимость места хранения (в единицах)"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_modal_templates.xml:0
+#, python-format
+msgid "No Products Stored Here..!"
+msgstr "В данном месте хранения товары отсутствуют...!"
+
+#. module: stock_3d_view
+#: model_terms:ir.ui.view,arch_db:stock_3d_view.view_location_form
+msgid "Position"
+msgstr "Положение"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__pos_x
+msgid "Position of the location along X-axis"
+msgstr "Положение места хранения по оси X"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__pos_y
+msgid "Position of the location along Y-axis"
+msgstr "Положение места хранения по оси Y"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__pos_z
+msgid "Position of the location along Z-axis"
+msgstr "Положение места хранения по оси Z"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_3d_templates.xml:0
+#: model_terms:ir.ui.view,arch_db:stock_3d_view.view_location_form
+#, python-format
+msgid "Preview Layout"
+msgstr "Предварительный просмотр расположения"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_modal_templates.xml:0
+#, python-format
+msgid "Product"
+msgstr "Товар"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_modal_templates.xml:0
+#, python-format
+msgid "Quantity"
+msgstr "Количество"
+
+#. module: stock_3d_view
+#: model:ir.model.constraint,message:stock_3d_view.constraint_stock_location_check_unique_code
+msgid "The location code must be unique per company !"
+msgstr "Код места хранения должен быть уникальным для каждой компании!"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_modal_templates.xml:0
+#, python-format
+msgid "Total Capacity:"
+msgstr "Общая вместимость:"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__unique_code
+msgid "Unique code of the location"
+msgstr "Уникальный код места хранения"
+
+#. module: stock_3d_view
+#. fincomtech-javascript
+#: code:addons/stock_3d_view/static/src/xml/stock_location_modal_templates.xml:0
+#, python-format
+msgid "Units"
+msgstr "Единицы"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__width
+msgid "Width (M)"
+msgstr "Ширина (м)"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,help:stock_3d_view.field_stock_location__width
+msgid "Width of the location in meters"
+msgstr "Ширина места хранения в метрах"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__pos_x
+msgid "X (in px)"
+msgstr "X (в пикселях)"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__pos_y
+msgid "Y (in px)"
+msgstr "Y (в пикселях)"
+
+#. module: stock_3d_view
+#: model:ir.model.fields,field_description:stock_3d_view.field_stock_location__pos_z
+msgid "Z (in px)"
+msgstr "Z (в пикселях)"
