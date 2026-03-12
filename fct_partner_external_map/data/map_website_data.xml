@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="yandex_maps" model="map.website">
+        <field name="name">Yandex Maps</field>
+        <field name="address_url"
+               eval="'https://yandex.ru/maps/?text={ADDRESS}'"/>
+        <field name="lat_lon_url"
+               eval="'https://yandex.ru/maps/?ll={LONGITUDE},{LATITUDE}&amp;pt={LONGITUDE},{LATITUDE}&amp;z=17'"/>
+        <field name="route_address_url"
+               eval="'https://yandex.ru/maps/?rtext={START_ADDRESS}~{DEST_ADDRESS}&amp;rtt=auto'"/>
+        <field name="route_lat_lon_url"
+               eval="'https://yandex.ru/maps/?rtext={START_LATITUDE},{START_LONGITUDE}~{DEST_LATITUDE},{DEST_LONGITUDE}&amp;rtt=auto'"/>
+        <field name="sequence">5</field>
+    </record>
+</odoo>
