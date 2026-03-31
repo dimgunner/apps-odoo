@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-inherit="mail.VoicePlayer" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o-mail-VoicePlayer')]/button[hasclass('bg-100')]" position="attributes">
+            <attribute name="class" remove="bg-100" separator=" "/>
+        </xpath>
+    </t>
+</templates>
