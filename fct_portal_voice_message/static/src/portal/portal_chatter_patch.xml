@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-inherit="portal.Chatter.Attachments" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o_portal_chatter_attachment')]/a" position="replace">
+            <t t-if="attachment.mimetype === 'audio/mpeg'"
+               class="o-mail-AttachmentCard d-flex rounded mb-1 me-1 mw-100 bg-100">
+                <t t-set="voice_recorder_props" t-value='`{
+                    "attachment": ${widget._attach_stringify(attachment)}
+                }`'/>
+                <owl-component name="fct_portal_voice_message.VoiceRecorder" t-att-props='voice_recorder_props'/>
+            </t>
+            <t t-else="">$0</t>
+        </xpath>
+    </t>
+
+</templates>
