@@ -4,12 +4,40 @@
         <xpath expr="//div[hasclass('o_portal_chatter_attachment')]/a" position="replace">
             <t t-if="attachment.mimetype === 'audio/mpeg'"
                class="o-mail-AttachmentCard d-flex rounded mb-1 me-1 mw-100 bg-100">
-                <t t-set="voice_recorder_props" t-value='`{
+                <t t-set="voice_player_props" t-value='`{
                     "attachment": ${widget._attach_stringify(attachment)}
                 }`'/>
-                <owl-component name="fct_portal_voice_message.VoicePlayer" t-att-props='voice_recorder_props'/>
+                <owl-component name="fct_portal_voice_message.VoicePlayer" t-att-props='voice_player_props'/>
             </t>
             <t t-else="">$0</t>
+        </xpath>
+    </t>
+
+    <t t-inherit="portal.Composer" t-inherit-mode="extension">
+        <xpath expr="//button[hasclass('o_portal_chatter_composer_btn')]" position="before">
+            <!--
+            <div class="d-flex px-1">
+                <button class="o_portal_chatter_attachment_btn btn fa fa-microphone border-0" type="button"
+                        title="Send"/>
+            </div>
+            -->
+            <!--
+            <VoiceRecorder t-if="thread and thread.type !== 'chatter' and allowUpload"
+                composer="props.composer"
+                attachmentUploader="attachmentUploader"
+                onchangeRecording.bind="() => this.state.recording = !this.state.recording"/>
+            -->
+            <t t-set="voice_recorder_props" t-value='`{
+                "composer": "props.composer",
+                "attachmentUploader": "attachmentUploader",
+                "onchangeRecording": "() => this.state.recording = !this.state.recording"
+            }`'/>
+
+            <!--
+            <t t-debug=""/>
+            -->
+
+            <owl-component name="fct_portal_voice_message.VoiceRecorder" t-att-props='voice_recorder_props'/>
         </xpath>
     </t>
 </templates>
