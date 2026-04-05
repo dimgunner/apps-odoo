@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="fct_portal_voice_message.VoiceRecorderOWL">
+        <VoiceRecorderPortal
+                composer="'props.composer'"
+                attachmentUploader="'attachmentUploader'"
+                res_id="props.res_id"
+                res_model="props.res_model"
+                token="props.token"
+        />
+    </t>
+</templates>

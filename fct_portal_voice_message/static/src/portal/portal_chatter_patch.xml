@@ -2,7 +2,7 @@
 <templates xml:space="preserve">
     <t t-inherit="portal.Chatter.Attachments" t-inherit-mode="extension">
         <xpath expr="//div[hasclass('o_portal_chatter_attachment')]/a" position="replace">
-            <t t-if="attachment.mimetype === 'audio/mpeg'"
+            <t t-if="widget and attachment.mimetype === 'audio/mpeg'"
                class="o-mail-AttachmentCard d-flex rounded mb-1 me-1 mw-100 bg-100">
                 <t t-set="voice_player_props" t-value='`{
                     "attachment": ${widget._attach_stringify(attachment)}
@@ -28,16 +28,11 @@
                 onchangeRecording.bind="() => this.state.recording = !this.state.recording"/>
             -->
             <t t-set="voice_recorder_props" t-value='`{
-                "composer": "props.composer",
-                "attachmentUploader": "attachmentUploader",
-                "onchangeRecording": "() => this.state.recording = !this.state.recording"
+                "res_id": ${widget.options.res_id},
+                "res_model": "${widget.options.res_model}",
+                "token": "${widget.options.token}"
             }`'/>
-
-            <!--
-            <t t-debug=""/>
-            -->
-
-            <owl-component name="fct_portal_voice_message.VoiceRecorder" t-att-props='voice_recorder_props'/>
+            <owl-component name="fct_portal_voice_message.VoiceRecorderOWL" t-att-props='voice_recorder_props'/>
         </xpath>
     </t>
 </templates>
