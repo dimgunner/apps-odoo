@@ -43,14 +43,7 @@ class VoiceRecorderPortal extends VoiceRecorder {
         this.cleanUp();
     }
 
-    /**
-     * Widget PortalComposer
-     * portal/static/src/js/portal_composer.js
-     */
     _prepareAttachmentData(file) {
-        /**
-         * _prepareAttachmentData: function (file)
-         */
         return {
             'name': file.name,
             'file': file,
@@ -62,9 +55,6 @@ class VoiceRecorderPortal extends VoiceRecorder {
     }
 
     uploadVoiceMessages(files) {
-        /**
-         * _onFileInputChange: function ()
-         */
         var self = this;
 
         this.$sendButton.prop('disabled', true);
