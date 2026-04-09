@@ -1,5 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <templates xml:space="preserve">
+    <t t-name="fct_portal_voice_message.VoiceRecorderPortal" t-inherit="mail.VoiceRecorder" t-inherit-mode="primary">
+        <xpath expr="//div[hasclass('o-mail-VoiceRecorder')]/button[hasclass('rounded-pill')]" position="after">
+            <div class="d-flex px-1">
+            </div>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o-mail-VoiceRecorder')]/div[hasclass('d-flex')]" position="inside">
+            <xpath expr="//div[hasclass('o-mail-VoiceRecorder')]/button[hasclass('rounded-pill')]" position="move"/>
+        </xpath>
+
+        <xpath expr="//div[hasclass('o-mail-VoiceRecorder')]/div[hasclass('d-flex')]/button[hasclass('rounded-pill')]"
+               position="attributes">
+            <attribute name="class" remove="rounded-pill" separator=" "/>
+        </xpath>
+    </t>
+
     <t t-name="fct_portal_voice_message.VoiceRecorderOWL">
         <VoiceRecorderPortal
                 composer="'props.composer'"

@@ -10,6 +10,11 @@ class VoiceRecorderPortal extends VoiceRecorder {
     /**
      * @override
      */
+    static template = "fct_portal_voice_message.VoiceRecorderPortal";
+
+    /**
+     * @override
+     */
     static props = [
         ...VoiceRecorder.props,
         "res_id?",
