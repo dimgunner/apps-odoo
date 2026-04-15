@@ -33,6 +33,14 @@ class VoiceRecorderPortal extends VoiceRecorder {
     /**
      * @override
      */
+    async startRecording() {
+        this.$sendButton.prop('disabled', true);
+        await super.startRecording();
+    }
+
+    /**
+     * @override
+     */
     stopRecording() {
         this.getMp3()
             .then((buffer) => {
@@ -41,6 +49,7 @@ class VoiceRecorderPortal extends VoiceRecorder {
             })
             .catch(() => {});
         this.cleanUp();
+        this.$sendButton.prop('disabled', false);
     }
 
     _prepareAttachmentData(file) {
