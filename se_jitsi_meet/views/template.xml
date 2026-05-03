@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="meet" inherit_id="portal.frontend_layout" name="Meet">
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-if="data">
+                <!--
+                <div id="meet" name="meet"></div>
+                <div id="name" t-att-name="data.name"></div>
+                <div id="domain" t-att-name="data.domain"></div>
+                <div id="hash" t-att-name="data.hash"></div>
+
+                <div id="meet" class="fullscreen-div" />
+                -->
+
+                <div class="jitsi-meet-container"
+                     data-room-name="my-meeting-room"
+                     data-width="100%"
+                     data-height="600px">
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="meet_closed" name="Closed">
+        <t t-call="portal.frontend_layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <img src="/se_jitsi_meet/static/closed.jpg"
+                         style="display:block; margin-left: auto; margin-right: auto;"/>
+                </div>
+
+            </div>
+        </t>
+    </template>
+</odoo>
