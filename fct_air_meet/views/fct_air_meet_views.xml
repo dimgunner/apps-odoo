@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="air_meet_view_tree" model="ir.ui.view">
+        <field name="name">air.meet.tree</field>
+        <field name="model">air.meet</field>
+        <field name="arch" type="xml">
+            <tree decoration-muted="closed==True">
+                <field name="name"/>
+                <field name="closed" invisible="1"/>
+                <field name="participants" widget="many2many_tags"/>
+                <field name="url" string="Share Link"/>
+                <button name="open" type="object" string="Join Meeting" class="oe_highlight" invisible="closed"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="air_meet_view_form" model="ir.ui.view">
+        <field name="name">air.meet.form</field>
+        <field name="model">air.meet</field>
+        <field name="arch" type="xml">
+            <form string="Meeting">
+                <header>
+                    <field name="create_uid" invisible="1"/>
+                    <field name="closed" invisible="1"/>
+                    <button name="open" type="object" string="Join Meeting" class="oe_highlight"
+                            invisible="closed or not create_uid"/>
+                    <button name="action_close_meeting" string="Close Meeting" type="object" groups="base.group_user"
+                            invisible="closed or not create_uid"/>
+                    <button name="action_reopen_meeting" string="Reopen Meeting" type="object" groups="base.group_user"
+                            invisible="not closed or not create_uid"/>
+                    <button name="send_mail" type="object" string="Send Invitation by Mail" class="oe_highlight"
+                            invisible="closed or not create_uid"/>
+                </header>
+                <sheet>
+                    <h1>
+                        <field name="name" placeholder="Meeting subject"/>
+                    </h1>
+                    <group name="info">
+                        <group>
+                            <field name="participants" widget="many2many_tags"/>
+                            <field name="url"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_air_meetings" model="ir.actions.act_window">
+        <field name="name">Air Meetings</field>
+        <field name="res_model">air.meet</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+    </record>
+
+    <menuitem
+            name="Air Meetings"
+            id="menu_air_meetings"
+            parent="mail.mail_menu_technical"
+            sequence="99"
+            action="action_air_meetings"
+    />
+</odoo>

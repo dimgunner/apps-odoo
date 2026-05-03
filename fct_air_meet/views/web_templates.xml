@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="meet" inherit_id="web.frontend_layout" name="Air Meeting">
+        <xpath expr="//t[@t-out='0']" position="after">
+            <t t-if="data">
+                <div class="air-meet-container"
+                     t-att-data-domain="data.domain"
+                     t-attf-data-room-name="{{data.name}} {{data.id}}"
+                     data-width="100%"
+                     data-height="600px">
+                </div>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="meet_closed" name="Air Meeting Closed">
+        <t t-call="web.frontend_layout">
+            <div class="alert alert-warning text-center">
+                <span>Air Meeting Closed</span>
+            </div>
+        </t>
+    </template>
+</odoo>

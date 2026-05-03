@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="url" model="ir.config_parameter">
+        <field name="key">fct_air_meet.url</field>
+        <field name="value">air.fincom.tech</field>
+    </record>
+</odoo>
