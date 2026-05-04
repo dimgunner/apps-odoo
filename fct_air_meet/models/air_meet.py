@@ -39,10 +39,9 @@ class AirMeet(models.Model):
     def open(self):
         return {
             'name': _('Air Meet'),
-            'res_model': 'ir.actions.act_url',
             'type': 'ir.actions.act_url',
             'target': 'new',
-            'url': self.url
+            'url': self.url,
         }
 
     def send_mail(self):
